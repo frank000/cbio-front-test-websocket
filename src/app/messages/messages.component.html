@@ -1,7 +1,13 @@
 <div id="messages">
-  <button class="btn btn-primary" (click)="onSendMessage()">
+  <div>
+    <input type="text" name="id" placeholder="Identificador" [(ngModel)]="ids"/>
+ 
+    <button type="button" title="Envia" (click)="conectar($event)">Conectar</button>
+  </div>
+
+  <!-- <button class="btn btn-primary" (click)="onSendMessage()">
     Send Test Message
-  </button>
+  </button> -->
   <h2>Received messages</h2>
   <ol>
     <!-- we will use Angular binding to populate list of messages -->
@@ -9,4 +15,12 @@
       {{ message }}
     </li>
   </ol>
+
+  <div>
+    
+    <textarea class="textarea1" [value]="msg">
+      
+    </textarea>
+    <button type="button" title="Envia" (click)="sender($event)">Enviar</button>
+  </div>
 </div>

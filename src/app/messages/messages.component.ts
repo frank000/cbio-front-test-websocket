@@ -13,7 +13,9 @@ export class MessagesComponent implements OnInit, OnDestroy {
   receivedMessages: string[] = [];
   // @ts-ignore, to suppress warning related to being undefined
   private topicSubscription: Subscription;
-
+ 
+  ids:string = "";
+  msg:string = "";
   constructor(private webSocketService: WebSocketService) {}
 
   ngOnInit() {
@@ -39,5 +41,20 @@ export class MessagesComponent implements OnInit, OnDestroy {
     this.webSocketService.sendMessage(   '/app/demo',  message );
 
 
+  
+  }
+
+  sender(event:any){
+    this.webSocketService.sendMessage(   '/app/demo.'+this.ids,  this.msg );
+  }
+
+  conectar(event:any){
+    this.webSocketService.disconnect();
+    this.webSocketService.connect();
+
+    this.webSocketService.getMessages('/topic/demo.'+this.ids).subscribe((message: string) => {
+      this.receivedMessages.push(message);
+    });
+  
   }
 }
