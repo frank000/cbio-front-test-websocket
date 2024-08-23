@@ -18,9 +18,13 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "@stomp/ng2-stompjs": "^8.0.0",
     "@stomp/rx-stomp": "^1.1.4",
+    "@stomp/stompjs": "^7.0.0",
+    "@types/sockjs-client": "^1.5.4",
     "prettier": "^2.5.1",
     "rxjs": "~7.5.0",
+    "sockjs-client": "^1.6.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
